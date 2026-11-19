@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.1 IBM em 6 Gráficos | CAIO 2030</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif}.dark body{background:#111827}
+html:not(.dark) body{background:#f8fafc}
+html:not(.dark) .bg-dark-900{background:#fff}html:not(.dark) .bg-dark-800{background:#f9fafb}html:not(.dark) .bg-dark-700{background:#f3f4f6}html:not(.dark) .bg-dark-600{background:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-emerald-400{color:#059669}
+html:not(.dark) .bg-emerald-500\/20{background:rgba(5,150,105,.12)}html:not(.dark) .bg-emerald-500\/10{background:rgba(5,150,105,.08)}
+html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .hover\:bg-emerald-500\/30:hover{background:rgba(5,150,105,.18)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background:rgba(225,29,72,.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}
+html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background:rgba(255,255,255,.95)}
+html:not(.dark) .bg-blue-900\/20{background:rgba(37,99,235,.06)}html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}
+html:not(.dark) .bg-red-900\/20{background:rgba(220,38,38,.06)}html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .border-red-500\/30{border-color:rgba(220,38,38,.25)}
+html:not(.dark) .bg-emerald-900\/20{background:rgba(5,150,105,.08)}
+</style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🧭</span><span class="font-bold text-lg hidden sm:inline">CAIO 2030</span></a>
+<span class="text-neutral-600">|</span>
+<a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Realidade</span></a>
+<a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Caminhos</span></a>
+<a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Marketing</span></a>
+<a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Playbooks</span></a>
+<a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">12 sem</span></a>
+<button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+<svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+</button></div></div></div>
+</nav>
+
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span>
+<a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.1</span>
+</div></nav>
+
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📊 O Estudo IBM em 6 Gráficos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Seis dados que justificam por que 2026 é o ano da inflexão. Cada número tem leitura empresarial — e leitura pessoal de carreira.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">35</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Base</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoria</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div></div></header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+<!-- TOPICO 1 -->
+<section id="topico-1" class="mb-16">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📈 Os 6 dados-chave em contexto</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Ler o estudo IBM <strong class="text-emerald-400">isolando os 6 números mais citados</strong> evita o erro mais comum: tratar um relatório de 60 páginas como 60 conclusões. Tem 6 fatos que sustentam o argumento — o resto é evidência de apoio.</p>
+
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📊</span> Gráfico 1 — Os 6 dados em uma só vista</h3>
+<div style="height:320px"><canvas id="chart1"></canvas></div>
+<p class="text-xs text-neutral-500 mt-3 text-center">Fonte: IBM Institute for Business Value · maio/2026</p>
+</div>
+
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Os 6 fatos centrais</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>76%</strong> das organizações têm CAIO em 2026 (vs 26% em 2025)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>64%</strong> dos CEOs decidem com input gerado por IA</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>83%</strong> consideram soberania de IA essencial</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>86% vs 25%</strong> — o gap entre confiança do CEO e adoção real</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>29% reskill + 53% upskill</strong> até 2028 (82% do quadro mexe)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>48%</strong> das decisões operacionais sem humano até 2030 (hoje 25%)</span></li>
+</ul></div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📚</span> Metodologia do estudo</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong>2.000 CEOs</strong> — todos com receita > USD 1bi</li>
+<li><strong>33 geografias</strong> — incluindo Brasil, EUA, Reino Unido, Alemanha, Índia, China, Japão</li>
+<li><strong>21 setores</strong> — finanças, varejo, saúde, indústria, energia, mídia, governo</li>
+<li><strong>Janela:</strong> fev–abr/2026 · publicado em maio/2026 pela IBM + Oxford Economics</li>
+</ul></div>
+
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica de uso</h3>
+<p class="text-neutral-300">Salve esses 6 números numa nota fixa. Em qualquer reunião sobre "estratégia digital", você consegue ancorar a conversa com dado de fonte primária. Vira sua autoridade silenciosa.</p>
+</div>
+</section>
+
+<!-- TOPICO 2 -->
+<section id="topico-2" class="mb-16">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🚀 CAIO: de 26% a 76% em 12 meses</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">A taxa de adoção do cargo de Chief AI Officer triplicou em um ano. Para comparação, <strong class="text-emerald-400">o CISO levou 9 anos</strong> para atingir penetração semelhante entre as Fortune 500.</p>
+
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📈</span> Gráfico 2 — Adoção CAIO vs CISO ao longo do tempo</h3>
+<div style="height:320px"><canvas id="chart2"></canvas></div>
+<p class="text-xs text-neutral-500 mt-3 text-center">CAIO: IBM 2026 · CISO: estudos históricos Gartner/IDC (curva agregada)</p>
+</div>
+
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">'24</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">2024 — Cargo experimental</h4>
+<p class="text-neutral-300 text-sm">Apenas 11% das empresas listadas tinham um head explícito de IA. Cargo "Head of Data" acumulava o tema.</p>
+</div></div>
+
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">'25</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">2025 — Onda inicial (26%)</h4>
+<p class="text-neutral-300 text-sm">Após o lançamento de modelos de fronteira (Claude 3.5, GPT-4o, Gemini 2.0), big-techs e bancos top-tier (JPMorgan, Goldman, Microsoft) criam a cadeira formal.</p>
+</div></div>
+
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">'26</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">2026 — Inflexão (76%)</h4>
+<p class="text-neutral-300 text-sm">Cargo migra para meio do mercado. Coca-Cola, Unilever, Maersk, Siemens, Pfizer — todos com CAIO. Janela de captação aberta para empresas tier-2.</p>
+</div></div>
+
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">'27</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">Projeção 2027 — Saturação (~90%)</h4>
+<p class="text-neutral-300 text-sm">Cargo vira commodity em empresas grandes. Diferenciação migra para "quem é o CAIO" — perfil e currículo, não mais a existência do cargo.</p>
+</div></div>
+</div>
+
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção à janela</h3>
+<p class="text-neutral-300 text-sm">A janela de captação para Path B (interno) é 2026-Q4 a 2028-Q2. Quem se posiciona depois de 2028 entra num mercado onde o cargo já tem ocupante, e a competição é só lateral.</p>
+</div>
+</section>
+
+<!-- TOPICO 3 -->
+<section id="topico-3" class="mb-16">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🧮 64% dos CEOs decidem com input de IA</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Esse número desfaz o maior mal-entendido: não é <strong class="text-emerald-400">IA tomando decisão</strong>, é CEO usando análise gerada por IA como peça do processo — ao lado de finanças, jurídico e RH.</p>
+
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🥧</span> Gráfico 3 — Adoção de IA na decisão executiva</h3>
+<div style="height:280px"><canvas id="chart3"></canvas></div>
+<p class="text-xs text-neutral-500 mt-3 text-center">% de CEOs (n=2.000) que reportam usar input de IA regularmente em decisões estratégicas</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Como CEO usa IA hoje</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Briefing pré-reunião do board (análise de carta de acionista)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Estresse-teste de cenário M&A (modelos comparáveis)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Síntese de pesquisa de cliente (1.000 reviews → 3 insights)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Draft de comunicado público (revisado por RP)</span></li>
+</ul></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ O que CEO NÃO faz com IA</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Decidir contratação ou demissão sem comitê</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Aprovar gasto > USD 10M só com recomendação de IA</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Publicar declaração pública gerada e não revisada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Substituir relatório financeiro auditado</span></li>
+</ul></div></div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🏢</span> Caso: JPMorgan</h3>
+<p class="text-neutral-300 text-sm">Jamie Dimon afirmou na carta anual 2025 que time executivo recebe daily briefing gerado por modelo proprietário (LLM Suite), combinando mercado, regulação e sentimento. Decisões finais permanecem humanas — mas o input já é IA-aumentado.</p>
+</div>
+
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Sua jogada</h3>
+<p class="text-neutral-300">Comece entregando para seu chefe o que CEO já recebe: briefing pré-reunião enxuto, gerado com IA, com sua revisão. Você vira "o canal IA" da sua área em 2-3 reuniões.</p>
+</div>
+</section>
+
+<!-- TOPICO 4 -->
+<section id="topico-4" class="mb-16">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🛡️ 83% colocam soberania de IA como prioridade</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">"Soberania de IA" virou KPI de CEO. Significa <strong class="text-emerald-400">controle sobre onde rodam os modelos, com quais dados, sob qual jurisdição e com qual auditabilidade</strong>. É mais política do que técnica.</p>
+
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🛡️</span> Gráfico 4 — Prioridade estratégica de soberania de IA</h3>
+<div style="height:280px"><canvas id="chart4"></canvas></div>
+<p class="text-xs text-neutral-500 mt-3 text-center">% de CEOs que classificam "soberania de IA" como essencial, importante ou opcional</p>
+</div>
+
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🗺️</span> As 4 dimensões da soberania</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">1.</span><span><strong>Soberania de dados</strong> — onde o dado está armazenado e quem acessa</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">2.</span><span><strong>Soberania de modelo</strong> — quem treinou, com qual corpus, qual licença</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">3.</span><span><strong>Soberania de decisão</strong> — quem é responsável por output errado</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">4.</span><span><strong>Soberania jurisdicional</strong> — sob qual lei o sistema responde (EU AI Act, NIST, LGPD)</span></li>
+</ul></div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🏢</span> Caso: Siemens</h3>
+<p class="text-neutral-300 text-sm">Anunciou em 2025 sua "Industrial AI Foundation Model" rodando em data center alemão, com governança específica para EU AI Act. Justificativa pública: clientes industriais europeus exigem garantia jurisdicional. Soberania virou argumento de venda B2B.</p>
+</div>
+
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Onde a soberania trava projetos</h3>
+<p class="text-neutral-300 text-sm">90% dos projetos de IA em empresas grandes travam em pelo menos uma das 4 dimensões. Quem destrava — escolhendo fornecedor + região + base legal certa — vira pessoa de confiança do jurídico e do CISO. Espaço politicamente confortável.</p>
+</div>
+</section>
+
+<!-- TOPICO 5 -->
+<section id="topico-5" class="mb-16">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📐 O gap de 61 pontos (86% × 25%)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Esse é o dado <strong class="text-emerald-400">mais importante do estudo</strong>. 86% dos CEOs acreditam que funcionários têm a skill para colaborar com IA. Só 25% usam regularmente. O gap não é técnico — é tradução, permissão e norma.</p>
+
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📐</span> Gráfico 5 — O gap de 61 pontos</h3>
+<div style="height:320px"><canvas id="chart5"></canvas></div>
+<p class="text-xs text-neutral-500 mt-3 text-center">CEO percebe ↔ funcionário usa · diferença = oportunidade real de carreira</p>
+</div>
+
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Decompondo o gap</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Skill ≠ uso</strong> — saber e fazer são coisas diferentes</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Permissão tácita</strong> — funcionário não sabe se pode usar dado da empresa em prompt</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Norma social</strong> — "ninguém aqui usa, então eu não uso"</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Fluxo não desenhado</strong> — IA fica isolada do workflow real</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Reconhecimento</strong> — ninguém premia quem economiza tempo com IA</span></li>
+</ul></div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🏢</span> Caso: Moderna</h3>
+<p class="text-neutral-300 text-sm">A farmacêutica adotou estratégia "1 funcionário, 1 GPT". Em 6 meses, criou 1.300 GPTs internos por funcionários (não por TI). Resultado: gap caiu de ~55 pontos para ~10. A chave não foi treinamento — foi permissão explícita + ferramenta de mão.</p>
+</div>
+
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🎯</span> Onde você entra</h3>
+<p class="text-neutral-300">Você não precisa convencer 100% do time. Precisa virar a referência da norma. Quando colega pergunta "como você faz isso tão rápido?", o gap está fechando — começando por você.</p>
+</div>
+</section>
+
+<!-- TOPICO 6 -->
+<section id="topico-6" class="mb-16">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">⚙️ 48% das decisões operacionais sem humano até 2030</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Quase metade das decisões "codificáveis por regras e guardrails" vão ser tomadas por IA sem intervenção até 2030 (hoje: 25%). <strong class="text-emerald-400">Quem executa essas decisões perde a função. Quem desenha os guardrails sobe.</strong></p>
+
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">⚙️</span> Gráfico 6 — Decisões operacionais autônomas: 2026 → 2030</h3>
+<div style="height:280px"><canvas id="chart6"></canvas></div>
+<p class="text-xs text-neutral-500 mt-3 text-center">% de decisões "codificáveis por regras e guardrails" tomadas por IA sem intervenção humana</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">⚠️ Funções que encolhem</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">↓</span><span>Aprovação de crédito padrão (banco varejo)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">↓</span><span>Triagem de sinistros simples (seguro)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">↓</span><span>Reposição de estoque (varejo previsível)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">↓</span><span>Pré-qualificação de currículos (RH operacional)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">↓</span><span>Roteamento de atendimento (CX nível 1)</span></li>
+</ul></div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Funções que crescem</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">↑</span><span>Desenho de guardrails e regras</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">↑</span><span>Auditoria de decisão automatizada</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">↑</span><span>Curadoria de exceções (escala)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">↑</span><span>Definição de KPI de modelo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">↑</span><span>Comunicação com stakeholder afetado</span></li>
+</ul></div></div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🏢</span> Caso: Maersk</h3>
+<p class="text-neutral-300 text-sm">A gigante de logística mantém ~42% das decisões de roteamento de carga automatizadas (dezembro/2025). A equipe que decide rota encolheu 60% em 4 anos — mas a equipe que desenha as regras e audita o sistema cresceu 3x. Migração de função, não desemprego.</p>
+</div>
+
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Sua pergunta</h3>
+<p class="text-neutral-300">Olhe para sua função e responda: <strong>"Quais das minhas decisões são codificáveis?"</strong> Se a resposta for >50%, sua prioridade é migrar para o lado do desenho. Se for <20%, sua prioridade é ampliar escopo usando IA.</p>
+</div>
+</section>
+
+<!-- BOX PROMPT -->
+<section class="mb-16">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">🧪</span> Prompt — diagnóstico rápido do seu cargo</h3>
+<p class="text-neutral-300 text-sm mb-4">Use este prompt no Claude/ChatGPT/Gemini para mapear sua exposição à automação. Cole sua descrição de cargo + atividades reais da última semana.</p>
+<div class="bg-dark-900 rounded-lg p-4 mb-3 text-xs text-neutral-300 font-mono whitespace-pre-wrap">🇧🇷 Você é um analista de transformação organizacional. Vou te passar a descrição do meu cargo e uma lista de atividades reais da última semana com tempo gasto. Sua tarefa:
+
+1. Classifique cada atividade em: (a) codificável por regras (alto risco de automação), (b) requer julgamento (risco médio), (c) requer relacionamento humano (baixo risco).
+2. Estime o percentual do meu tempo em cada categoria.
+3. Sugira 3 movimentos de carreira que migram tempo da categoria (a) para categorias (b) e (c).
+4. Indique quais skills do estudo IBM 2026 (governança, tradução técnica, change management) seriam mais alavancadoras para mim.
+
+[Cole aqui descrição do cargo + atividades]</div>
+<div class="bg-dark-900 rounded-lg p-4 text-xs text-neutral-300 font-mono whitespace-pre-wrap">🇺🇸 You are an organizational transformation analyst. I'll share my job description and a list of actual activities from last week with time spent. Your task:
+
+1. Classify each activity as: (a) rule-codifiable (high automation risk), (b) judgment-required (medium risk), (c) relationship-required (low risk).
+2. Estimate the % of my time in each category.
+3. Suggest 3 career moves that shift time from (a) toward (b) and (c).
+4. Indicate which skills from the IBM 2026 study (governance, technical translation, change management) would be highest-leverage for me.
+
+[Paste job description + activities here]</div>
+</div></section>
+
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>6 fatos centrais</strong><span class="text-neutral-400"> — 76% CAIO, 64% decisão com IA, 83% soberania, gap de 61pts, 82% mexem skill, 48% decisão sem humano.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Janela curta</strong><span class="text-neutral-400"> — adoção de CAIO está triplicando ano a ano; posicionar-se em 2026-27.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Decisão aumentada, não autônoma</strong><span class="text-neutral-400"> — CEO usa IA como input, mantém decisão.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Soberania é o pet topic do CEO</strong><span class="text-neutral-400"> — quem domina vira ponte para jurídico/CISO.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Gap de 61pts = oportunidade</strong><span class="text-neutral-400"> — você ganha sendo a referência da norma, não convencendo 100%.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Lado correto da linha</strong><span class="text-neutral-400"> — desenhar guardrails (cresce) vs executar regras (encolhe).</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3>
+<p class="text-neutral-300">1.2 — Por que o CAIO virou cargo em 24 meses</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha</a>
+<a href="modulo-1-2.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo Módulo →</a>
+</div></div></section>
+
+</main>
+
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>CAIO 2030 — Chief AI Officer · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+</div></footer>
+
+<script>
+const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;
+if(localStorage.getItem('theme')==='light'){h.classList.remove('dark');d.classList.remove('hidden')}else{l.classList.remove('hidden')}
+t.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');renderCharts()});
+
+// ===== CHART.JS =====
+const EMERALD='#34d399', EMERALD_DARK='#059669', BLUE='#60a5fa', RED='#f87171', AMBER='#fbbf24', GRAY='#6b7280';
+function isDark(){return document.documentElement.classList.contains('dark')}
+function tickColor(){return isDark()?'#9ca3af':'#6b7280'}
+function gridColor(){return isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.08)'}
+function accent(){return isDark()?EMERALD:EMERALD_DARK}
+
+let charts={};
+function destroy(){Object.values(charts).forEach(c=>c&&c.destroy());charts={}}
+
+function renderCharts(){
+  destroy();
+  const opts={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:tickColor()}}}};
+
+  // 1 - 6 dados em uma vista (horizontal bar)
+  charts.c1=new Chart(document.getElementById('chart1'),{
+    type:'bar',
+    data:{labels:['CAIO em empresas','CEO decide com IA','Soberania essencial','Reskill+Upskill ate 2028','Decisao op. sem humano (2030)','Adocao real pelo time'],
+      datasets:[{data:[76,64,83,82,48,25],backgroundColor:[accent(),BLUE,AMBER,accent(),RED,GRAY],borderRadius:6}]},
+    options:{...opts,indexAxis:'y',scales:{x:{max:100,ticks:{color:tickColor(),callback:v=>v+'%'},grid:{color:gridColor()}},y:{ticks:{color:tickColor()},grid:{display:false}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.x+'%'}}}}
+  });
+
+  // 2 - CAIO vs CISO ao longo do tempo
+  charts.c2=new Chart(document.getElementById('chart2'),{
+    type:'line',
+    data:{labels:['Ano 0','+1','+2','+3','+4','+5','+6','+7','+8','+9'],
+      datasets:[
+        {label:'CAIO (2024 = ano 0)',data:[11,26,76,90,null,null,null,null,null,null],borderColor:accent(),backgroundColor:'rgba(5,150,105,.15)',tension:.35,pointRadius:5,fill:true},
+        {label:'CISO (2001 = ano 0)',data:[5,8,12,17,24,32,38,44,49,55],borderColor:BLUE,backgroundColor:'rgba(96,165,250,.1)',tension:.35,pointRadius:3,borderDash:[6,4]}
+      ]},
+    options:{...opts,scales:{y:{max:100,ticks:{color:tickColor(),callback:v=>v+'%'},grid:{color:gridColor()}},x:{ticks:{color:tickColor()},grid:{display:false}}}}
+  });
+
+  // 3 - 64% donut
+  charts.c3=new Chart(document.getElementById('chart3'),{
+    type:'doughnut',
+    data:{labels:['Usa IA na decisao','Nao usa'],datasets:[{data:[64,36],backgroundColor:[accent(),isDark()?'#374151':'#e5e7eb'],borderWidth:0}]},
+    options:{...opts,cutout:'65%',plugins:{legend:{position:'bottom',labels:{color:tickColor()}},tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+'%'}}}}
+  });
+
+  // 4 - 83% soberania (stacked)
+  charts.c4=new Chart(document.getElementById('chart4'),{
+    type:'bar',
+    data:{labels:['Soberania de IA'],datasets:[
+      {label:'Essencial',data:[83],backgroundColor:accent()},
+      {label:'Importante',data:[12],backgroundColor:BLUE},
+      {label:'Opcional',data:[5],backgroundColor:GRAY}
+    ]},
+    options:{...opts,indexAxis:'y',scales:{x:{stacked:true,max:100,ticks:{color:tickColor(),callback:v=>v+'%'},grid:{color:gridColor()}},y:{stacked:true,ticks:{color:tickColor()},grid:{display:false}}},plugins:{legend:{labels:{color:tickColor()}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.x+'%'}}}}
+  });
+
+  // 5 - Gap CEO vs funcionario
+  charts.c5=new Chart(document.getElementById('chart5'),{
+    type:'bar',
+    data:{labels:['CEO acha que time tem skill','Funcionario usa IA regularmente'],
+      datasets:[{data:[86,25],backgroundColor:[BLUE,RED],borderRadius:8}]},
+    options:{...opts,scales:{y:{max:100,ticks:{color:tickColor(),callback:v=>v+'%'},grid:{color:gridColor()}},x:{ticks:{color:tickColor()},grid:{display:false}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y+'%'}}}}
+  });
+
+  // 6 - Decisoes 2026 -> 2030
+  charts.c6=new Chart(document.getElementById('chart6'),{
+    type:'bar',
+    data:{labels:['2026 (hoje)','2030 (projecao)'],
+      datasets:[{data:[25,48],backgroundColor:[GRAY,accent()],borderRadius:8}]},
+    options:{...opts,scales:{y:{max:60,ticks:{color:tickColor(),callback:v=>v+'%'},grid:{color:gridColor()}},x:{ticks:{color:tickColor()},grid:{display:false}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y+'%'}}}}
+  });
+}
+renderCharts();
+</script>
+</body></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAIO 2030 — Chief AI Officer</title>
+  <meta name="description" content="O manual para se tornar o profissional de IA de referencia dentro da sua empresa — ou independente. Baseado no estudo IBM 2026 com 2.000 CEOs.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: {
+        primary: '#FACC15',
+        dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+      }}}
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+
+    /* Light mode base */
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* Light mode — 6 trilhas */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,.25); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,.08); }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,.25); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,.25); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,.08); }
+    html:not(.dark) .group:hover .group-hover\:text-purple-400 { color: #7c3aed; }
+
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(217,119,6,.12); }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(217,119,6,.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(217,119,6,.25); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,.08); }
+    html:not(.dark) .group:hover .group-hover\:text-amber-400 { color: #92400e; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13,148,136,.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13,148,136,.25); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,.08); }
+    html:not(.dark) .group:hover .group-hover\:text-teal-400 { color: #0d9488; }
+
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225,29,72,.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225,29,72,.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225,29,72,.25); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,.08); }
+    html:not(.dark) .group:hover .group-hover\:text-rose-400 { color: #9f1239; }
+
+    /* Light mode — remove gradientes + cores especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+<!-- NAVIGATION -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-14">
+      <div class="flex items-center space-x-4">
+        <a href="index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+          <span class="text-2xl">🧭</span>
+          <span class="font-bold text-lg hidden sm:inline">CAIO 2030</span>
+        </a>
+        <span class="text-neutral-600">|</span>
+        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+      </div>
+      <div class="flex items-center space-x-1 sm:space-x-2">
+        <a href="curso/trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Realidade</span></a>
+        <a href="curso/trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Caminhos</span></a>
+        <a href="curso/trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+        <a href="curso/trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Marketing</span></a>
+        <a href="curso/trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Playbooks</span></a>
+        <a href="curso/trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">12 semanas</span></a>
+        <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="bg-gradient-to-br from-emerald-900/20 via-dark-900 to-purple-900/20 py-20 border-b border-dark-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-6 border border-primary/40">CURSO COMPLETO · ESTILO AGENTICO</span>
+    <h1 class="text-4xl sm:text-6xl font-bold mb-6 leading-tight">
+      76% das grandes empresas têm um <span class="text-primary">Chief AI Officer</span>.<br>
+      <span class="text-neutral-400">25% dos funcionários usam IA.</span>
+    </h1>
+    <p class="text-xl text-neutral-300 max-w-3xl mb-4">De que lado dessa estatística você vai estar em 2027?</p>
+    <p class="text-base text-neutral-400 max-w-3xl mb-8">
+      Não é curso de prompt engineer. Não é como abrir agência. É como você — analista, gerente, coordenador, especialista — se torna a pessoa de IA da sua área. Internamente ou independente.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="curso/trilha1/index.html" class="px-8 py-4 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-400 transition-colors text-center">Começar pela Trilha 1 →</a>
+      <a href="#mapa" class="px-8 py-4 bg-dark-700 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors text-center">Ver mapa do curso</a>
+    </div>
+    <p class="text-xs text-neutral-500 mt-4">Baseado no estudo IBM 2026 (2.000 CEOs · 33 geografias · 21 setores · Fev–Abr 2026)</p>
+  </div>
+</header>
+
+<!-- A REALIDADE -->
+<section class="py-16 border-b border-dark-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold mb-2">A realidade em 6 gráficos</h2>
+    <p class="text-neutral-400 mb-10">O salto estrutural que aconteceu em 12 meses — e o gap onde está sua oportunidade.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <div class="text-sm font-semibold text-emerald-400 mb-1">CAIO: salto em 12 meses</div>
+        <div class="text-xs text-neutral-400 mb-3">% de grandes empresas com Chief AI Officer</div>
+        <div style="height:200px"><canvas id="ld1"></canvas></div>
+      </div>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <div class="text-sm font-semibold text-amber-400 mb-1">O gap de 61 pontos</div>
+        <div class="text-xs text-neutral-400 mb-3">CEO acha que time sabe ↔ funcionário usa de fato</div>
+        <div style="height:200px"><canvas id="ld2"></canvas></div>
+      </div>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <div class="text-sm font-semibold text-blue-400 mb-1">Decisões op. autônomas</div>
+        <div class="text-xs text-neutral-400 mb-3">% decisões codificáveis sem humano</div>
+        <div style="height:200px"><canvas id="ld3"></canvas></div>
+      </div>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <div class="text-sm font-semibold text-purple-400 mb-1">Soberania de IA</div>
+        <div class="text-xs text-neutral-400 mb-3">% de CEOs classificando como essencial</div>
+        <div style="height:200px"><canvas id="ld4"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <div class="text-4xl font-bold text-teal-400 mb-2">64%</div>
+        <p class="text-sm text-neutral-300">dos CEOs decidem com <strong>input gerado por IA</strong>.</p>
+      </div>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <div class="text-4xl font-bold text-rose-400 mb-2">82%</div>
+        <p class="text-sm text-neutral-300">dos funcionários precisarão de <strong>reskilling ou upskilling</strong> até 2028.</p>
+      </div>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <div class="text-4xl font-bold text-emerald-400 mb-2">57%</div>
+        <p class="text-sm text-neutral-300">dos CAIOs são <strong>promoções internas</strong> — não contratação externa.</p>
+      </div>
+    </div>
+    <p class="text-xs text-neutral-500 mt-6 text-center">Fonte: IBM Institute for Business Value · estudo com 2.000 CEOs · maio/2026</p>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="py-16 border-b border-dark-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold mb-10">Para quem é · Para quem NÃO é</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+        <h4 class="font-bold text-emerald-400 mb-4">✓ É para você se...</h4>
+        <ul class="space-y-3 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Você é analista, coordenador, gerente, especialista — quer ser a pessoa de IA da sua área.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Quer evidência (dados IBM, casos reais), não promessa de R$10k/mês.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Prefere ser puxado pra cima dentro da empresa OU prestar serviço pra 3-5 clientes — sem hustle de cold call.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Quer um caminho adulto, profissional, com framework — não hype.</span></li>
+        </ul>
+      </div>
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+        <h4 class="font-bold text-red-400 mb-4">✗ NÃO é para você se...</h4>
+        <ul class="space-y-3 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Você procura "segredos" para virar AI agency em 90 dias.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Quer virar prompt engineer puro — este curso é sobre profissão + IA, não sobre prompt-craft.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Acredita que IA é só "mais uma camada tecnológica" — aqui tratamos como novo modelo operacional.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Não está disposto a documentar wins e construir reputação composta em 12 semanas.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA DO CURSO -->
+<section id="mapa" class="py-16 border-b border-dark-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold mb-2">Mapa do curso · 6 trilhas, 36 módulos</h2>
+    <p class="text-neutral-400 mb-10">Da fundação ao plano de execução. 216 tópicos. Estilo agêntico — você opera, não só lê.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="curso/trilha1/index.html" class="group bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 hover:scale-[1.02] transition-all">
+        <span class="inline-block px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-3">TRILHA 1 · EMERALD</span>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">🌐 A Nova Realidade</h3>
+        <p class="text-sm text-neutral-400 mb-4">Fundação. Decifra o estudo IBM. Cenário Brasil. Mitos. Mapeia sua posição no gap.</p>
+        <div class="text-xs text-neutral-500">6 módulos · 36 tópicos · ~4h</div>
+      </a>
+
+      <a href="curso/trilha2/index.html" class="group bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 hover:scale-[1.02] transition-all">
+        <span class="inline-block px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-3">TRILHA 2 · BLUE</span>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🛤️ Os Dois Caminhos</h3>
+        <p class="text-sm text-neutral-400 mb-4">Path A (consultor) vs Path B (AI-native interno). Autoavaliação. Erros fatais.</p>
+        <div class="text-xs text-neutral-500">6 módulos · 36 tópicos · ~4h</div>
+      </a>
+
+      <a href="curso/trilha3/index.html" class="group bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 hover:scale-[1.02] transition-all">
+        <span class="inline-block px-2 py-0.5 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-3">TRILHA 3 · PURPLE</span>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">🧠 As 6 Skills Core</h3>
+        <p class="text-sm text-neutral-400 mb-4">Fluência conceitual, prompt aplicado a negócio, automação, governança, storytelling, change.</p>
+        <div class="text-xs text-neutral-500">6 módulos · 36 tópicos · ~5h</div>
+      </a>
+
+      <a href="curso/trilha4/index.html" class="group bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 hover:scale-[1.02] transition-all">
+        <span class="inline-block px-2 py-0.5 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-3">TRILHA 4 · AMBER ⭐</span>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors">📣 Posicionamento e Marketing Pessoal</h3>
+        <p class="text-sm text-neutral-400 mb-4">Thesis pública, build in public corporativo, pitch interno e externo, reputação composta.</p>
+        <div class="text-xs text-neutral-500">6 módulos · 36 tópicos · ~5h</div>
+      </a>
+
+      <a href="curso/trilha5/index.html" class="group bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 hover:scale-[1.02] transition-all">
+        <span class="inline-block px-2 py-0.5 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-3">TRILHA 5 · TEAL</span>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-teal-400 transition-colors">🎭 Playbooks por Função</h3>
+        <p class="text-sm text-neutral-400 mb-4">Marketing, Finanças, RH, Operações, Vendas, Jurídico — AI-native do seu jeito.</p>
+        <div class="text-xs text-neutral-500">6 módulos · 36 tópicos · ~5h</div>
+      </a>
+
+      <a href="curso/trilha6/index.html" class="group bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 hover:scale-[1.02] transition-all">
+        <span class="inline-block px-2 py-0.5 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-3">TRILHA 6 · ROSE</span>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-rose-400 transition-colors">📅 Plano de 12 Semanas</h3>
+        <p class="text-sm text-neutral-400 mb-4">Descoberta, primeiro projeto, ampliação, pedido (promoção ou proposta). Métricas que importam.</p>
+        <div class="text-xs text-neutral-500">6 módulos · 36 tópicos · ~4h</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESE CENTRAL -->
+<section class="py-16 border-b border-dark-600">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-6">A tese deste curso</h2>
+    <blockquote class="text-2xl text-neutral-300 italic leading-relaxed mb-6">
+      "IA não deve ser tratada como uma camada tecnológica adicional, mas como um novo modelo operacional — exigindo mudanças em liderança, governança, talento e colaboração."
+    </blockquote>
+    <p class="text-sm text-neutral-500">— Estudo IBM com 2.000 CEOs, 2026</p>
+    <p class="text-base text-neutral-400 mt-8 max-w-2xl mx-auto">
+      Você não precisa mudar de função. Você precisa mudar <strong class="text-primary">qual versão da sua função</strong> você é.
+      Pode terceirizar seu pensamento, mas não pode terceirizar seu entendimento.
+    </p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Comece agora pela Trilha 1</h2>
+    <p class="text-neutral-400 mb-8">Em 30 minutos você termina a fundação e tem clareza de qual caminho seguir.</p>
+    <a href="curso/trilha1/index.html" class="inline-block px-10 py-4 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-400 transition-colors">🌐 Trilha 1 — A Nova Realidade →</a>
+  </div>
+</section>
+
+<footer class="border-t border-dark-600 py-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+    <p>CAIO 2030 — Chief AI Officer · 2026 · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+  </div>
+
+<!-- inema-backlink:v1 -->
+<p style="display:block;width:100%;text-align:center;font-size:.85rem;margin:.75rem 0 0;opacity:.85"><a href="https://www.inema.club/cursos/100-caio-chief-ai-officer-2030/" style="color:inherit;text-decoration:underline">Ficha completa deste curso no INEMA.CLUB</a> · <a href="https://www.inema.club/aprender-inteligencia-artificial/" style="color:inherit;text-decoration:underline">Guia: como aprender inteligência artificial</a></p>
+<!-- /inema-backlink:v1 -->
+</footer>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const dIcon = document.getElementById('theme-toggle-dark-icon');
+  const lIcon = document.getElementById('theme-toggle-light-icon');
+  const html = document.documentElement;
+  if (localStorage.getItem('theme') === 'light') { html.classList.remove('dark'); dIcon.classList.remove('hidden'); }
+  else { lIcon.classList.remove('hidden'); }
+  themeToggle.addEventListener('click', () => {
+    dIcon.classList.toggle('hidden'); lIcon.classList.toggle('hidden');
+    html.classList.toggle('dark');
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    renderLanding();
+  });
+
+  // Mini charts da landing
+  function isDark(){return html.classList.contains('dark')}
+  function tc(){return isDark()?'#9ca3af':'#6b7280'}
+  function gc(){return isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.08)'}
+  let lc={};
+  function renderLanding(){
+    Object.values(lc).forEach(c=>c&&c.destroy());
+    const baseOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}};
+    const EM=isDark()?'#34d399':'#059669', AM=isDark()?'#fbbf24':'#92400e', BL=isDark()?'#60a5fa':'#2563eb', PU=isDark()?'#c084fc':'#7c3aed', RD='#f87171', GR=isDark()?'#374151':'#e5e7eb';
+
+    lc.ld1=new Chart(document.getElementById('ld1'),{type:'bar',data:{labels:['2024','2025','2026'],datasets:[{data:[11,26,76],backgroundColor:[GR,GR,EM],borderRadius:6}]},options:{...baseOpts,scales:{y:{max:100,ticks:{color:tc(),callback:v=>v+'%'},grid:{color:gc()}},x:{ticks:{color:tc()},grid:{display:false}}},plugins:{...baseOpts.plugins,tooltip:{callbacks:{label:c=>c.parsed.y+'%'}}}}});
+
+    lc.ld2=new Chart(document.getElementById('ld2'),{type:'bar',data:{labels:['CEO percebe','Funcionario usa'],datasets:[{data:[86,25],backgroundColor:[BL,RD],borderRadius:6}]},options:{...baseOpts,scales:{y:{max:100,ticks:{color:tc(),callback:v=>v+'%'},grid:{color:gc()}},x:{ticks:{color:tc()},grid:{display:false}}},plugins:{...baseOpts.plugins,tooltip:{callbacks:{label:c=>c.parsed.y+'%'}}}}});
+
+    lc.ld3=new Chart(document.getElementById('ld3'),{type:'bar',data:{labels:['2026','2030'],datasets:[{data:[25,48],backgroundColor:[GR,BL],borderRadius:6}]},options:{...baseOpts,scales:{y:{max:60,ticks:{color:tc(),callback:v=>v+'%'},grid:{color:gc()}},x:{ticks:{color:tc()},grid:{display:false}}},plugins:{...baseOpts.plugins,tooltip:{callbacks:{label:c=>c.parsed.y+'%'}}}}});
+
+    lc.ld4=new Chart(document.getElementById('ld4'),{type:'doughnut',data:{labels:['Essencial','Outros'],datasets:[{data:[83,17],backgroundColor:[PU,GR],borderWidth:0}]},options:{...baseOpts,cutout:'65%',plugins:{legend:{display:true,position:'bottom',labels:{color:tc()}},tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+'%'}}}}});
+  }
+  renderLanding();
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+body{font-family:'Inter',sans-serif}.dark body{background:#111827}
+html:not(.dark) body{background:#f8fafc}
+html:not(.dark) .bg-dark-900{background:#fff}
+html:not(.dark) .bg-dark-800{background:#f9fafb}
+html:not(.dark) .bg-dark-700{background:#f3f4f6}
+html:not(.dark) .bg-dark-600{background:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}
+html:not(.dark) .text-neutral-300{color:#4b5563}
+html:not(.dark) .text-neutral-400{color:#6b7280}
+html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}
+html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}
+html:not(.dark) .bg-primary\/10{background:rgba(161,98,7,.08)}
+html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}
+html:not(.dark) .text-yellow-400{color:#a16207}
+html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}
+html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background:rgba(255,255,255,.95)}
+
+/* T1 Emerald */
+html:not(.dark) .text-emerald-400{color:#059669}
+html:not(.dark) .bg-emerald-500\/20{background:rgba(5,150,105,.12)}
+html:not(.dark) .bg-emerald-500\/10{background:rgba(5,150,105,.08)}
+html:not(.dark) .bg-emerald-900\/20{background:rgba(5,150,105,.08)}
+html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}
+html:not(.dark) .hover\:bg-emerald-500\/10:hover{background:rgba(5,150,105,.08)}
+
+/* T2 Blue */
+html:not(.dark) .text-blue-400{color:#2563eb}
+html:not(.dark) .bg-blue-500\/20{background:rgba(37,99,235,.12)}
+html:not(.dark) .bg-blue-500\/10{background:rgba(37,99,235,.08)}
+html:not(.dark) .bg-blue-900\/20{background:rgba(37,99,235,.06)}
+html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}
+html:not(.dark) .hover\:bg-blue-500\/10:hover{background:rgba(37,99,235,.08)}
+
+/* T3 Purple */
+html:not(.dark) .text-purple-400{color:#7c3aed}
+html:not(.dark) .bg-purple-500\/20{background:rgba(124,58,237,.12)}
+html:not(.dark) .bg-purple-500\/10{background:rgba(124,58,237,.08)}
+html:not(.dark) .bg-purple-900\/20{background:rgba(124,58,237,.06)}
+html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,.25)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}
+html:not(.dark) .hover\:bg-purple-500\/10:hover{background:rgba(124,58,237,.08)}
+
+/* T4 Amber */
+html:not(.dark) .text-amber-400{color:#92400e}
+html:not(.dark) .bg-amber-500\/20{background:rgba(217,119,6,.12)}
+html:not(.dark) .bg-amber-500\/10{background:rgba(217,119,6,.08)}
+html:not(.dark) .bg-amber-900\/20{background:rgba(217,119,6,.06)}
+html:not(.dark) .border-amber-500\/30{border-color:rgba(217,119,6,.25)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}
+html:not(.dark) .hover\:bg-amber-500\/10:hover{background:rgba(217,119,6,.08)}
+
+/* T5 Teal */
+html:not(.dark) .text-teal-400{color:#0d9488}
+html:not(.dark) .bg-teal-500\/20{background:rgba(13,148,136,.12)}
+html:not(.dark) .bg-teal-500\/10{background:rgba(13,148,136,.08)}
+html:not(.dark) .bg-teal-900\/20{background:rgba(13,148,136,.06)}
+html:not(.dark) .border-teal-500\/30{border-color:rgba(13,148,136,.25)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}
+html:not(.dark) .hover\:bg-teal-500\/10:hover{background:rgba(13,148,136,.08)}
+
+/* T6 Rose */
+html:not(.dark) .text-rose-400{color:#9f1239}
+html:not(.dark) .bg-rose-500\/20{background:rgba(225,29,72,.12)}
+html:not(.dark) .bg-rose-500\/10{background:rgba(225,29,72,.08)}
+html:not(.dark) .bg-rose-900\/20{background:rgba(225,29,72,.06)}
+html:not(.dark) .border-rose-500\/30{border-color:rgba(225,29,72,.25)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}
+html:not(.dark) .hover\:bg-rose-500\/10:hover{background:rgba(225,29,72,.08)}
+
+/* Red (alerts) */
+html:not(.dark) .text-red-400{color:#b91c1c}
+html:not(.dark) .bg-red-900\/20{background:rgba(220,38,38,.06)}
+html:not(.dark) .border-red-500\/30{border-color:rgba(220,38,38,.25)}

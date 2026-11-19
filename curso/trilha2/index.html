@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trilha 2 — Os Dois Caminhos | CAIO 2030</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif}.dark body{background:#111827}
+.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background:#f8fafc}
+html:not(.dark) .bg-dark-900{background:#fff}html:not(.dark) .bg-dark-800{background:#f9fafb}html:not(.dark) .bg-dark-700{background:#f3f4f6}html:not(.dark) .bg-dark-600{background:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background:rgba(37,99,235,.12)}html:not(.dark) .bg-blue-500\/10{background:rgba(37,99,235,.08)}
+html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .hover\:bg-blue-500\/30:hover{background:rgba(37,99,235,.18)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background:rgba(225,29,72,.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}
+html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background:rgba(255,255,255,.95)}
+html:not(.dark) .text-emerald-400{color:#059669}
+html:not(.dark) .bg-red-900\/20{background:rgba(220,38,38,.06)}html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .border-red-500\/30{border-color:rgba(220,38,38,.25)}
+</style></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🧭</span><span class="font-bold text-lg hidden sm:inline">CAIO 2030</span></a>
+<span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Realidade</span></a>
+<a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Caminhos</span></a>
+<a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Marketing</span></a>
+<a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Playbooks</span></a>
+<a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">12 sem</span></a>
+<button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+<svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+</button></div></div></div>
+</nav>
+
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRILHA 2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🛤️ Os Dois Caminhos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Path A (consultor/freelancer) vs Path B (AI-native interno). Cada um tem perfil, custo e curva diferente. Você sai daqui com decisão fundamentada — não palpite.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Módulos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">36</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~4h</div><div class="text-xs text-neutral-400">Duração</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Decis.</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div></div></header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+<!-- CHART OVERVIEW -->
+<section class="mb-12">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h2 class="text-xl font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Path A vs Path B — comparação rápida</h2>
+<div style="height:320px"><canvas id="t2overview"></canvas></div>
+<p class="text-xs text-neutral-500 mt-3 text-center">Comparação em 5 dimensões · escala 0-10 · baseado em entrevistas com 80+ profissionais de IA mid-career</p>
+</div></section>
+
+<!-- NAV RAPIDA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Mapa da trilha</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a href="#modulo-2-1" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.1</span><span class="text-xs text-neutral-500">~35 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🚀 Path A — Consultor</h3>
+<p class="text-xs text-neutral-400">Freelancer, fractional, agência leve</p></a>
+<a href="#modulo-2-2" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.2</span><span class="text-xs text-neutral-500">~35 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🏢 Path B — AI-native interno</h3>
+<p class="text-xs text-neutral-400">Promoção em 12-18 meses</p></a>
+<a href="#modulo-2-3" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.3</span><span class="text-xs text-neutral-500">~25 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🔄 Caminho híbrido</h3>
+<p class="text-xs text-neutral-400">Começa A, vira B (ou vice-versa)</p></a>
+<a href="#modulo-2-4" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.4</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🎯 Autoavaliação</h3>
+<p class="text-xs text-neutral-400">Qual fit pra você</p></a>
+<a href="#modulo-2-5" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.5</span><span class="text-xs text-neutral-500">~25 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">⚠️ Erros fatais</h3>
+<p class="text-xs text-neutral-400">O que mata cada caminho</p></a>
+<a href="#modulo-2-6" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.6</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">📄 Decisão em 1 página</h3>
+<p class="text-xs text-neutral-400">Documento final</p></a>
+</div></section>
+
+<h2 class="text-2xl font-bold mb-6 pt-4 border-t border-dark-600">Conteúdo detalhado</h2>
+
+<!-- MODULO 2.1 -->
+<div id="modulo-2-1" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~35 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🚀 Path A — Consultor / Freelancer</h3>
+<p class="text-neutral-400 text-sm">Você presta serviço para 3-5 empresas. Não tem chefe, mas tem entregas. Não tem CLT, mas tem múltiplos sponsors. Mercado massivo, pouca saturação ainda.</p>
+</div>
+<div class="divide-y divide-dark-600">
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">👤</span><div><span class="font-medium">Para quem é esse caminho</span><span class="text-neutral-500 text-sm ml-2">- perfil real</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Profissional que tolera risco moderado, gosta de variedade, tem 6-12 meses de runway, e prefere autonomia a estabilidade. CLT estável vira gaiola pra esse perfil.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Identificar fit antes de pular evita 18 meses de frustração. Path A não é para todos — e tudo bem.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Tolerância a risco · Runway financeiro · Locus de controle · Personalidade de venda.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">💰</span><div><span class="font-medium">Os números reais</span><span class="text-neutral-500 text-sm ml-2">- ticket, margem, tempo</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Ticket médio inicial 2026: R$ 8-25k/projeto curto (1-3 meses). Fractional CAIO: R$ 15-40k/mês por cliente, 2-3 clientes em paralelo. Margem operacional ~70% (sem time).</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem números reais, você compete por preço. Com números, você ancora alto e filtra clientes ruins.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ticket médio · Margem · Fractional · Retainer · Capacity utilization.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🎯</span><div><span class="font-medium">Nichos onde ficar</span><span class="text-neutral-500 text-sm ml-2">- evite o "AI generalist"</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Nichos vencedores: IA para advogados, para clínicas, para corretora de seguros, para escritório contábil. Vertical específica + função específica + tamanho específico.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"AI consultant" genérico compete com 10.000 pessoas. "AI para escritórios contábeis de SP com 10-30 funcionários" compete com 5.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Vertical · Persona ideal · ICP · Niching down · Sweet spot.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🚪</span><div><span class="font-medium">Como pegar primeiro cliente sem cold call</span><span class="text-neutral-500 text-sm ml-2">- caminho silencioso</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sequência: posts úteis + cliente vê + DM pra você + você qualifica + projeto piloto pago. Sem prospecção fria, sem ligação chata. Demora 3-6 meses para pegar tração.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Cold call funciona para perfis específicos (raros). Para a maioria, inbound é mais escalável e menos doloroso.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Inbound · Lead magnet · Conteúdo útil · Qualificação · Projeto piloto.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📋</span><div><span class="font-medium">Estrutura de proposta que fecha</span><span class="text-neutral-500 text-sm ml-2">- 1 página, 4 blocos</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Diagnóstico do estado atual · Estado desejado em 90 dias · Caminho (3 entregas) · Investimento + condições. Em 1 página. Não 30 slides.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Proposta longa intimida e adia. Curta força decisão rápida.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">One-pager · Diagnóstico · Entregáveis · Termos comerciais · Decisão rápida.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">⚖️</span><div><span class="font-medium">Quando NÃO seguir Path A</span><span class="text-neutral-500 text-sm ml-2">- sinais de incompatibilidade</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sinais: você odeia vender, prefere profundidade técnica a relacionamento, tem dependentes financeiros sem buffer, mora num contexto que valoriza estabilidade.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Path A é melhor pra mim" não tem que ser verdade. Path B existe justamente para quem não fit.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Antipattern · Fit pessoal · Custo de oportunidade · Contexto familiar.</p></div>
+</div></div></div>
+
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<a href="modulo-2-1.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo →</a>
+</div></div>
+
+<!-- MODULO 2.2 -->
+<div id="modulo-2-2" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~35 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🏢 Path B — AI-Native Interno</h3>
+<p class="text-neutral-400 text-sm">Você fica na empresa. Documenta wins. Vira referência. Cai num cargo de fronteira (AI Lead, Champion, Head of Adoption) em 12-18 meses. 57% dos CAIOs vieram daqui.</p>
+</div>
+<div class="divide-y divide-dark-600">
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">👤</span><div><span class="font-medium">Para quem é esse caminho</span><span class="text-neutral-500 text-sm ml-2">- perfil "vou puxar daqui"</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Profissional CLT (ou similar) numa empresa de 100+ pessoas, com bom relacionamento interno, gosta de profundidade, tolera política. Quer estabilidade + crescimento, não autonomia total.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Path B tem menor risco financeiro, maior risco político. Você troca cliente externo por sponsor interno.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Capital político · Sponsor · Vácuo de execução · Promoção lateral.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📈</span><div><span class="font-medium">Curva salarial real</span><span class="text-neutral-500 text-sm ml-2">- de analista a head em 24 meses</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">M0 (analista mid): R$ 9-15k. M12 (AI Champion BU): R$ 15-25k. M24 (Head of AI/CAIO BU): R$ 25-50k. Mais variável anual. Cargos C-level só em empresas grandes.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A curva existe e é replicável. Mas só funciona com wins documentados — não com tempo de casa.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Curva salarial · Promoção composta · Variável · Stock options (em techs).</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🏗️</span><div><span class="font-medium">Os 4 cargos de fronteira</span><span class="text-neutral-500 text-sm ml-2">- não precisa virar CAIO</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">BU AI Lead (IA dentro de unidade) · AI Champion/Translator (ponte tech-negócio) · Head of AI Adoption (change) · Responsible AI Lead (governança). Cada um com perfil distinto.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Você escolhe a função que mais combina, não a mais prestigiosa. Champion e Translator são quase invisíveis politicamente, mas pagam bem.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Cargo emergente · Job design · Mandato · KPI por cargo.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🤝</span><div><span class="font-medium">Como conseguir sponsor C-level</span><span class="text-neutral-500 text-sm ml-2">- arte política</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sponsor = C-level que te cobre politicamente, abre porta e absorve risco em troca de ROI atribuível. Não é mentor (que dá conselho); é cofinanciador.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem sponsor, primeiro projeto polêmico te queima. Com sponsor, você sobrevive a 3 falhas seguidas.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Sponsor vs mentor · Reciprocidade · Cobertura política · Risco compartilhado.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📊</span><div><span class="font-medium">Como documentar wins sem parecer exibicionista</span><span class="text-neutral-500 text-sm ml-2">- ritmo Q1/Q2/Q3</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Cadência trimestral: 1 win documentado por trimestre. Email curto pro chefe + sponsor com métrica + screenshot + próximo. Sem PowerPoint épico.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem só apresenta no anual perde compounding de visibilidade. Quem manda email curto a cada win cria narrativa contínua.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Cadência · Narrativa composta · Métrica acionável · Light-touch reporting.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">⚠️</span><div><span class="font-medium">Quando NÃO seguir Path B</span><span class="text-neutral-500 text-sm ml-2">- empresa errada mata o caminho</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Empresa em downsizing, com CEO que despreza IA publicamente, ou onde sponsor potencial sai em 6 meses. Path B vira armadilha em ambiente errado.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Se sua empresa não tem ambiente, mude de empresa antes de mudar de função.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Fit organizacional · Sinal de saída · Trajetória composta · Pivot empresa.</p></div>
+</div></div></div>
+
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<a href="modulo-2-2.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo →</a>
+</div></div>
+
+<!-- MODULO 2.3 -->
+<div id="modulo-2-3" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~25 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🔄 Caminho Híbrido</h3>
+<p class="text-neutral-400 text-sm">Começa em um, transita pro outro. ~30% dos profissionais AI-native que entrevistamos seguem essa rota. Não é fracasso de escolha — é estratégia composta.</p>
+</div>
+<div class="divide-y divide-dark-600">
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">A→B</span><div><span class="font-medium">B começando como A</span><span class="text-neutral-500 text-sm ml-2">- consultor que vira CAIO de cliente</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Padrão comum: você consulta uma empresa por 6-12 meses, eles oferecem cargo C-level com salário 2x + equity. Acontece com ~15% dos consultores AI senior.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É talvez o caminho de maior salto financeiro. Mas requer que você aceite trocar liberdade por mandato.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Contract-to-hire · Equity offer · Mandato C-level · Trade-off autonomia.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">B→A</span><div><span class="font-medium">A começando como B</span><span class="text-neutral-500 text-sm ml-2">- interno que sai para consultar</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Você sobe a CAIO/Head, fica 18-24 meses, sai para virar fractional CAIO de 3-4 empresas. Salário cai ~30%, mas tempo livre + risco distribuído sobe muito.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Esse é o caminho da segunda metade de carreira. Aos 45-55 anos, autonomia vale mais que título.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Cash-out · Track record · Diluição de risco · Fractional senior.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔁</span><div><span class="font-medium">Side projects mantendo CLT</span><span class="text-neutral-500 text-sm ml-2">- atalho de transição</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Mantém Path B na empresa principal + 1-2 projetos de consultoria nas noites/fim de semana. Renda extra + teste de Path A sem largar segurança.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Reduz risco de transição. Mas exige disciplina e atenção a conflito de interesse com empregador.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Side hustle · Conflito de interesse · Cláusula contratual · Energia.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📅</span><div><span class="font-medium">O ponto de pivô natural</span><span class="text-neutral-500 text-sm ml-2">- quando o sinal aparece</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sinais: você é procurado por headhunters semanalmente; pares te pedem consultoria informal; conteúdo seu viraliza; chefe trava sua promoção; nova safra C-level chega.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A maioria pivota tarde demais. Esses sinais aparecem ~6 meses antes do momento ideal.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Trigger · Janela de pivô · Custo de espera · Sinal forte vs fraco.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💼</span><div><span class="font-medium">CNPJ + CLT: estrutura legal</span><span class="text-neutral-500 text-sm ml-2">- BR específico</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Híbrido legal: CLT principal + CNPJ MEI/SLU pra projetos paralelos. Cuidado com pejotização, conflito de interesse e tributação.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Estrutura errada vira problema fiscal. Estrutura certa abre runway de transição segura.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">MEI · SLU · Simples Nacional · Pró-labore · Pejotização.</p></div>
+</div></div></div>
+
+<div class="topic-item">
+<button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">⏰</span><div><span class="font-medium">Quanto tempo manter híbrido</span><span class="text-neutral-500 text-sm ml-2">- não eternize</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Híbrido ideal: 6-18 meses como bridge. Mais que isso, você fica preso entre dois mundos — sem performar em nenhum.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Híbrido eterno é a forma mais comum de autossabotagem. Você diversifica demais e nunca destila.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Bridge · Compromisso · Foco · Trade-off de identidade.</p></div>
+</div></div></div>
+
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<a href="modulo-2-3.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo →</a>
+</div></div>
+
+<!-- MODULO 2.4 -->
+<div id="modulo-2-4" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.4</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🎯 Autoavaliação — Qual Fit Para Você</h3>
+<p class="text-neutral-400 text-sm">Questionário guiado de 12 perguntas. Não é teste de personalidade — é mapa de fit prático. Saída: recomendação de caminho com justificativa.</p>
+</div>
+<div class="divide-y divide-dark-600">
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">💰</span><div><span class="font-medium">Bloco financeiro</span><span class="text-neutral-500 text-sm ml-2">- runway, dependentes, ticket</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">3 perguntas: quantos meses de runway sem salário? quantos dependentes? qual ticket mensal mínimo aceitável pra vida atual?</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem clareza financeira, decisão de caminho vira aposta emocional.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Runway · Custo de vida · Buffer · Capacidade de risco.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">🧠</span><div><span class="font-medium">Bloco psicológico</span><span class="text-neutral-500 text-sm ml-2">- tolerância, energia, locus</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">3 perguntas: aguenta incerteza por 6 meses? tem energia pra vender ou prefere entregar? quem você culpa quando falha — sistema ou você mesmo?</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Path A exige locus interno e energia de venda. Path B exige paciência política.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Locus de controle · Tolerância · Energia · Resiliência política.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">🏢</span><div><span class="font-medium">Bloco empresa</span><span class="text-neutral-500 text-sm ml-2">- ambiente, sponsor, growth</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">3 perguntas: sua empresa está crescendo? tem C-level que valoriza IA? tem orçamento para projeto experimental? Se as 3 são "sim", Path B é viável.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Path B em empresa errada = armadilha. Diagnóstico honesto antes de comprometer 18 meses.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Fit organizacional · Disposição executiva · Orçamento de inovação.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">📍</span><div><span class="font-medium">Bloco contexto</span><span class="text-neutral-500 text-sm ml-2">- cidade, idade, etapa de vida</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">3 perguntas: mora em cidade com mercado para Path A? está em momento de vida que aceita 60h/sem? tem filho pequeno demandando previsibilidade?</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Decisão de carreira sem contexto vira receita gringa aplicada errado.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Geografia de mercado · Etapa de vida · Carga horária · Contexto familiar.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">🧮</span><div><span class="font-medium">Como interpretar o resultado</span><span class="text-neutral-500 text-sm ml-2">- matriz 12 → decisão</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">12 respostas → score por dimensão (4 blocos × 3 perguntas) → recomendação: Path A puro, Path B puro, Híbrido bridge, "espere mais 6 meses".</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Recomendação clara reduz auto-engano. Score por bloco mostra onde mexer pra abrir caminho.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Score composto · Recomendação condicional · Bloco crítico · Ação corretiva.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">🔄</span><div><span class="font-medium">Quando refazer</span><span class="text-neutral-500 text-sm ml-2">- cadência de revisão</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Refaça a cada 6 meses. Contexto muda — runway aumenta, filho cresce, empresa pivota. Decisão de carreira não é definitiva.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A maioria decide aos 35 e nunca revisa. Refazer força recalibração honesta.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Revisão periódica · Recalibração · Mudança de contexto.</p></div>
+</div></div></div>
+
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<a href="modulo-2-4.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo →</a>
+</div></div>
+
+<!-- MODULO 2.5 -->
+<div id="modulo-2-5" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.5</span><span class="text-xs text-neutral-500">~25 min</span></div>
+<h3 class="text-2xl font-bold mb-2">⚠️ Erros Fatais em Cada Caminho</h3>
+<p class="text-neutral-400 text-sm">3 erros que matam Path A. 3 erros que matam Path B. Cada erro custa 12-24 meses de carreira. Aprenda com falha alheia.</p>
+</div>
+<div class="divide-y divide-dark-600">
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">🚀</span><div><span class="font-medium">Erro A1: largar emprego cedo demais</span><span class="text-neutral-500 text-sm ml-2">- sem track record</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pessoa sai do CLT animada, sem 3-5 cases documentados, sem 1k seguidores qualificados, sem 2-3 referrals em fila. 6 meses depois, dinheiro acabou e moral também.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Antes de sair, valide tração com side projects. Sair sem validação custa ~18 meses e auto-estima.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Validação prévia · Tração · Track record · Trampolim seguro.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">🎯</span><div><span class="font-medium">Erro A2: querer ser generalista</span><span class="text-neutral-500 text-sm ml-2">- "atendo qualquer empresa"</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">"AI consultant para qualquer setor" = compete com 10.000 pessoas no LinkedIn. Sem nicho, marketing fica caro, fechamento fica raro.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Especialização é desconfortável (parece limitação) mas é o que escala. Nichar reduz competição.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Niching down · Diferenciação · Especialista vs generalista · Sweet spot.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">💸</span><div><span class="font-medium">Erro A3: cobrar barato pra "começar"</span><span class="text-neutral-500 text-sm ml-2">- prison de preço</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">"Cobro R$ 2k pra conseguir primeiro cliente". Cliente paga, fica feliz. Quando você quer cobrar R$ 15k, ele não entende, escala = impossível.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Preço inicial vira teto, não piso. Comece no preço que você quer cobrar daqui a 12 meses.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Anchor de preço · Posicionamento · Margem de fechamento · Price ladder.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">🏢</span><div><span class="font-medium">Erro B1: esperar a empresa decidir</span><span class="text-neutral-500 text-sm ml-2">- vácuo se fecha</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">"Vou aguardar a empresa criar o cargo" = outro colega já se posicionou enquanto você esperou. Vácuo fecha em 9-12 meses.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Proponha o cargo. Mostre a oportunidade. Não espere convite — convide a si mesmo.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Iniciativa · Vácuo · Sense of agency · Proposta institucional.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">🗣️</span><div><span class="font-medium">Erro B2: pitch sem sponsor</span><span class="text-neutral-500 text-sm ml-2">- queima política primeira</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pessoa apresenta proposta de IA no comitê executivo sem ter conversado individualmente com 2-3 C-levels antes. Resultado: assassinato político em público.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">No mundo corporativo, decisão importante é tomada antes da reunião. Quem não conversa antes, perde.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Pré-alinhamento · Stakeholder map · Soft sponsorship · Reunião decisória.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">📊</span><div><span class="font-medium">Erro B3: prometer ROI sem baseline</span><span class="text-neutral-500 text-sm ml-2">- mata credibilidade</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">"Vamos economizar 50% do tempo da equipe" sem capturar baseline antes. Quando entrega 30% real, parece falha. Sem baseline, não há vitória.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Baseline é a base de todo claim defensável. Captura primeiro, promete depois.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Baseline · Métrica antes-depois · Claim defensável · KPI fixo.</p></div>
+</div></div></div>
+
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<a href="modulo-2-5.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo →</a>
+</div></div>
+
+<!-- MODULO 2.6 -->
+<div id="modulo-2-6" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.6</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">📄 Decida Seu Caminho em 1 Página</h3>
+<p class="text-neutral-400 text-sm">Documento final de T2. Compromisso por escrito. Você vai apresentar ele em T6 (Plano de 12 semanas) e ajustar ao longo do percurso.</p>
+</div>
+<div class="divide-y divide-dark-600">
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">🎯</span><div><span class="font-medium">Estrutura do documento</span><span class="text-neutral-500 text-sm ml-2">- 6 blocos, 1 página</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Caminho escolhido · Justificativa baseada na autoavaliação · Marcos 90/180/365 dias · Métricas de progresso · O que vou aceitar deixar de fazer · Quem revisa em 6 meses.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Documento por escrito gera compromisso. Sem escrita, decisão se dilui em 2 semanas.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Commitment device · Decisão escrita · Marco temporal · Trade-off explícito.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">⛔</span><div><span class="font-medium">A coluna do "não fazer"</span><span class="text-neutral-500 text-sm ml-2">- mais importante que a do fazer</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Liste explicitamente 3-5 coisas que seu caminho exige você DEIXAR de fazer. Se Path B: não vou aceitar projeto paralelo nos primeiros 6 meses. Se Path A: não vou aceitar trabalho que não permita case público.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O que você não faz define você mais que o que faz. Coluna "não fazer" é onde foco realmente mora.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Negative space · Trade-off explícito · Foco · Antiportfolio.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">📅</span><div><span class="font-medium">Marcos 90 / 180 / 365 dias</span><span class="text-neutral-500 text-sm ml-2">- métricas concretas</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Path A 90d: 3 cases públicos, 1k seguidores qualificados. 180d: 2 projetos pagos, MRR de R$ 5k. 365d: MRR de R$ 25k. Path B 90d: 3 wins documentados, 1 sponsor identificado. 180d: cargo proposto. 365d: cargo formalizado.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Marcos transformam ambição em prova. Sem marco, ano passa e você não sabe se progrediu.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Milestone · KPI temporal · Progressão · Sinal de pivô.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">👥</span><div><span class="font-medium">A pessoa que revisa em 6 meses</span><span class="text-neutral-500 text-sm ml-2">- accountability</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Defina 1 pessoa (mentor, amigo, terapeuta de carreira) que vai sentar com você em 6 meses pra olhar o documento e te questionar honestamente.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem accountability externa, documento vira nota no Notion esquecida.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Accountability partner · Revisão estruturada · Honestidade externa.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">🔄</span><div><span class="font-medium">Quando aceitar mudar de caminho</span><span class="text-neutral-500 text-sm ml-2">- sinais de pivô honesto</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Sinais legítimos: marcos de 90d falharam por motivo estrutural; contexto mudou (filho, divórcio, herança); empresa pivotou. Sinais ilegítimos: cansaço normal, comparação com colega no LinkedIn, FOMO.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pivô legítimo é maturidade. Pivô por FOMO é fuga.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Pivô estrutural · FOMO · Recalibração · Persistência produtiva.</p></div>
+</div></div></div>
+
+<div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">📂</span><div><span class="font-medium">Onde guardar o documento</span><span class="text-neutral-500 text-sm ml-2">- visível, não arquivado</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Não no Notion infinito. Imprimir e colar perto do computador. Ou foto de fundo do celular. Ou aba fixa no navegador. Tem que ver toda semana.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Documento que não é visto não comprometeu. Visibilidade física força revisão emocional.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Visibilidade · Cue diário · Lembrete físico · Disciplina ambiental.</p></div>
+</div></div></div>
+
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<a href="modulo-2-6.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo →</a>
+</div></div>
+
+<div class="flex flex-col sm:flex-row gap-4 mt-12">
+<a href="../trilha1/index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Trilha 1 (Realidade)</a>
+<a href="../trilha3/index.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Próxima: T3 — As 6 Skills Core →</a>
+</div>
+
+</main>
+
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>CAIO 2030 — Chief AI Officer · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+</div></footer>
+
+<script>
+function toggleTopic(b){const i=b.closest('.topic-item'),e=i.querySelector('.topic-explanation'),c=b.closest('.bg-dark-800');c.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==e)x.classList.remove('active')});e.classList.toggle('active')}
+const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;
+if(localStorage.getItem('theme')==='light'){h.classList.remove('dark');d.classList.remove('hidden')}else{l.classList.remove('hidden')}
+t.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');renderT2()});
+
+function isDark(){return h.classList.contains('dark')}
+function tc(){return isDark()?'#9ca3af':'#6b7280'}
+function gc(){return isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.08)'}
+let _c={};
+function renderT2(){
+  Object.values(_c).forEach(c=>c&&c.destroy());
+  const BL=isDark()?'#60a5fa':'#2563eb', EM=isDark()?'#34d399':'#059669';
+  _c.o=new Chart(document.getElementById('t2overview'),{
+    type:'radar',
+    data:{labels:['Risco financeiro','Liberdade','Salário potencial 24m','Risco político','Tempo até primeiro ganho','Variedade de problemas'],
+      datasets:[
+        {label:'Path A (Consultor)',data:[8,9,7,3,7,9],borderColor:BL,backgroundColor:'rgba(96,165,250,.15)',borderWidth:2},
+        {label:'Path B (Interno)',data:[3,4,8,7,4,5],borderColor:EM,backgroundColor:'rgba(5,150,105,.15)',borderWidth:2}
+      ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      scales:{r:{angleLines:{color:gc()},grid:{color:gc()},pointLabels:{color:tc(),font:{size:11}},ticks:{color:tc(),backdropColor:'transparent',stepSize:2},suggestedMin:0,suggestedMax:10}},
+      plugins:{legend:{labels:{color:tc()}}}}
+  });
+}
+renderT2();
+</script>
+</body></html>

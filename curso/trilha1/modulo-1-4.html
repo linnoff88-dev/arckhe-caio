@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.4 Cenário Brasil | CAIO 2030</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif}.dark body{background:#111827}
+html:not(.dark) body{background:#f8fafc}
+html:not(.dark) .bg-dark-900{background:#fff}html:not(.dark) .bg-dark-800{background:#f9fafb}html:not(.dark) .bg-dark-700{background:#f3f4f6}html:not(.dark) .bg-dark-600{background:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background:rgba(5,150,105,.12)}html:not(.dark) .bg-emerald-500\/10{background:rgba(5,150,105,.08)}
+html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .hover\:bg-emerald-500\/30:hover{background:rgba(5,150,105,.18)}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background:rgba(124,58,237,.08)}
+html:not(.dark) .hover\:text-amber-400:hover{color:#92400e}html:not(.dark) .hover\:bg-amber-500\/10:hover{background:rgba(217,119,6,.08)}
+html:not(.dark) .hover\:text-teal-400:hover{color:#0d9488}html:not(.dark) .hover\:bg-teal-500\/10:hover{background:rgba(13,148,136,.08)}
+html:not(.dark) .hover\:text-rose-400:hover{color:#9f1239}html:not(.dark) .hover\:bg-rose-500\/10:hover{background:rgba(225,29,72,.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}
+html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .bg-dark-900\/95{background:rgba(255,255,255,.95)}
+html:not(.dark) .bg-blue-900\/20{background:rgba(37,99,235,.06)}html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}
+html:not(.dark) .bg-red-900\/20{background:rgba(220,38,38,.06)}html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .border-red-500\/30{border-color:rgba(220,38,38,.25)}
+html:not(.dark) .bg-emerald-900\/20{background:rgba(5,150,105,.08)}
+</style></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🧭</span><span class="font-bold text-lg hidden sm:inline">CAIO 2030</span></a>
+<span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Realidade</span></a>
+<a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Caminhos</span></a>
+<a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Marketing</span></a>
+<a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Playbooks</span></a>
+<a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">12 sem</span></a>
+<button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+<svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+</button></div></div></div>
+</nav>
+
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span>
+<a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.4</span>
+</div></nav>
+
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🌎 Cenário Brasil — O Que Muda Aqui</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">O estudo IBM é global. Importar sem traduzir é receita de proposta rejeitada. Aqui as diferenças que importam — e o que copiar dos players globais sem virar paródia.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Base</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Contx.</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div></div></header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+<section id="topico-1" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">📜 LGPD aplicada à IA</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">LGPD não foi escrita para IA generativa, mas se aplica integralmente. <strong class="text-emerald-400">Dado pessoal em prompt, retenção de log, decisão automatizada (art. 20)</strong> — tudo já cai sob a lei. ANPD vem regulando caso a caso enquanto o PL 2338 não vira lei.</p>
+
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">⚖️</span> Pontos sensíveis da LGPD em IA</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Art. 7º — Base legal</strong> — qual fundamento autoriza o tratamento (consentimento, legítimo interesse, etc.)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Art. 20 — Decisão automatizada</strong> — direito à revisão humana de decisões com efeito significativo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Art. 6º, V — Necessidade</strong> — IA não pode coletar/usar dado além do estritamente necessário</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Art. 6º, VII — Segurança</strong> — retenção segura inclui logs de prompts com dados pessoais</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Art. 5º, XV — Cross-border</strong> — transferência internacional precisa de salvaguarda</span></li>
+</ul></div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🇪🇺</span> Comparação: LGPD vs GDPR vs EU AI Act</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <strong>LGPD (BR)</strong> — princípio amplo, ANPD interpreta caso a caso. Multa até 2% do faturamento, R$ 50M por infração.</li>
+<li>• <strong>GDPR (EU)</strong> — texto consolidado, jurisprudência farta. Multa até 4% do faturamento ou €20M.</li>
+<li>• <strong>EU AI Act</strong> — específico para IA, classificação por risco. Multa até €35M ou 7%. Brasil deve seguir esse modelo no PL 2338.</li>
+</ul></div>
+
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Seu trabalho oculto</h3>
+<p class="text-neutral-300">90% dos projetos de IA em empresas brasileiras travam no jurídico. Quem destrava sentando com DPO e oferecendo template de DPIA específica pra IA vira ponte política em 30 dias.</p>
+</div>
+</section>
+
+<section id="topico-2" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">💰 Custo de mão de obra vs automação</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Salário CLT + encargos (~70% sobre o bruto) faz automação ter ROI mais lento que nos EUA. <strong class="text-emerald-400">Mas a equação muda quando você inclui turnover, treinamento e custo de erro</strong>. CFO brasileiro entende essa matemática melhor que ROI gringo copiado.</p>
+
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🧾</span> A matemática real do custo</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Custo direto</strong> — salário + 13º + férias + encargos = ~1.8x salário bruto</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Turnover</strong> — 25-30%/ano em mid-management. Reposição custa 1.5x salário anual.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Treinamento</strong> — 3-6 meses até produtividade plena = 30-50% salário "perdido"</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Custo de erro</strong> — em compliance/finanças, erro humano custa multas significativas</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Capacidade</strong> — 1 humano = 40-44h/sem. 1 agente roda 24/7.</span></li>
+</ul></div>
+
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Não cole ROI gringo</h3>
+<p class="text-neutral-300 text-sm">Estudo McKinsey diz "USD 4.4tri de produtividade global"? Bonito. CFO BR quer ver: economia em reais, em sua função, com taxa de câmbio realista e tempo até payback. Sem isso, proposta vira slide bonito sem orçamento.</p>
+</div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🏢</span> Caso: Klarna (modelo replicável)</h3>
+<p class="text-neutral-300 text-sm">A fintech sueca reduziu 700 funcionários equivalentes em atendimento usando 1 assistente IA. Resultado em USD 40M/ano. Refeito com salários brasileiros: ~R$ 35-50M/ano economizados. Mesmo conceito, números diferentes, ambos defensáveis.</p>
+</div>
+</section>
+
+<section id="topico-3" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">🎭 Cultura corporativa e "permissão pra errar"</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Empresa brasileira média <strong class="text-emerald-400">pune erro público mais do que recompensa win</strong>. IA tem natureza experimental — alucinação, falha, exception. Sem cobertura política, projetos abortam na primeira falha visível.</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ O que reduz risco político</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Sponsor C-level explícito (não tácito)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Piloto com escopo reduzido e métrica baseline</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"Plano B" pronto se IA falhar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Comunicação proativa de falhas (não cover-up)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Métricas semanais visíveis para sponsor</span></li>
+</ul></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ O que mata projeto na primeira falha</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Projeto "do TI" sem dono de negócio</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Big-bang em produção sem piloto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Promessa de ROI sem baseline anterior</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Dependência de 1 modelo / 1 fornecedor</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Esconder falha esperando que ninguém perceba</span></li>
+</ul></div></div>
+
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🎯</span> Sponsor sênior é mais importante que skill</h3>
+<p class="text-neutral-300">Você pode ter o melhor pitch técnico do Brasil. Sem sponsor C-level explícito, a primeira polêmica te queima. Antes de propor o projeto, garanta cobertura política. Trilha 4 ensina como conseguir essa cobertura.</p>
+</div>
+</section>
+
+<section id="topico-4" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">☁️ Ecossistema de fornecedores no Brasil</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Mercado BR é dominado por <strong class="text-emerald-400">AWS, Azure e GCP com região local</strong> para soberania. Modelos top: OpenAI, Anthropic, Google. Integradoras: globais e nacionais. Conhecer o terreno vira moeda interna — quem indica fornecedor sem viés vira referência da empresa.</p>
+
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🗺️</span> Mapa do ecossistema</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Hyperscalers:</strong> AWS (Bedrock, região SA-East-1) · Azure (OpenAI Service, região Brazil South) · GCP (Vertex AI, região São Paulo)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Frontier models:</strong> Anthropic Claude · OpenAI GPT · Google Gemini · Meta Llama (open)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Locais especializados:</strong> NVIDIA NIM · Mistral · DeepSeek (cuidado com soberania) · alternativas open-source</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Integradoras globais:</strong> Accenture · Deloitte · BCG · McKinsey QuantumBlack</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Plataformas:</strong> LangChain · LangSmith · n8n · Make · Zapier · Microsoft Copilot</span></li>
+</ul></div>
+
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🌐</span> Soberania regional na prática</h3>
+<p class="text-neutral-300 text-sm">Empresa que precisa cumprir LGPD strict (banco, saúde, governo) prefere modelo rodando em região BR, com contrato BAA-equivalente. Bedrock e Azure OpenAI Service em região BR são as opções óbvias. Quem indica essa arquitetura para o CISO vira aliado natural.</p>
+</div>
+
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Não vire vendedor de um fornecedor</h3>
+<p class="text-neutral-300 text-sm">Profissional de IA respeitado é multimodel/multivendor. Se você só fala bem de uma cloud ou um modelo, sua opinião perde peso. Mantenha mapa atualizado dos 3 hyperscalers + 3 modelos top.</p>
+</div>
+</section>
+
+<section id="topico-5" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🏭 4 setores onde o gap é maior no Brasil</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Setores com alta densidade documental, atendimento volumoso e compliance pesado são onde a oportunidade está concentrada. <strong class="text-emerald-400">Se você está em um desses 4, sua trajetória é mais curta</strong>. Se não, ainda dá pra aplicar o playbook.</p>
+
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">Serviços financeiros</h4>
+<p class="text-neutral-300 text-sm">Bancos, seguradoras, fintechs. Compliance (PLD/KYC) + atendimento + análise de crédito = 3 grandes vetores. Modelos globais como JPMorgan (LLM Suite) servem de referência direta para projetos locais.</p>
+</div></div>
+
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">Saúde</h4>
+<p class="text-neutral-300 text-sm">Operadoras, hospitais, clínicas. Triagem, prontuário eletrônico, autorização de procedimento. Caso de referência: Kaiser Permanente (EUA) e NHS (UK) reduziram tempo médico em consulta com transcrição IA.</p>
+</div></div>
+
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">Varejo / E-commerce</h4>
+<p class="text-neutral-300 text-sm">Atendimento, recomendação, gestão de estoque, conteúdo de produto. Walmart e Shopify (global) provam o caso. Em BR o ganho percentual é maior porque base de adoção atual é baixa.</p>
+</div></div>
+
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">Jurídico / Compliance</h4>
+<p class="text-neutral-300 text-sm">Escritórios, departamentos jurídicos internos, regulatório. Review de contrato, redação de minuta, busca de jurisprudência. Harvey AI (referência global) já tem clientes Magic Circle. Equivalente BR é caso recente em construção.</p>
+</div></div>
+</div>
+</section>
+
+<section id="topico-6" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🇺🇸 O que copiar e não copiar dos EUA</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Importação seletiva é a chave. <strong class="text-emerald-400">Quem copia tudo soa desconectado. Quem importa seletivamente vira bom tradutor</strong> — perfil que o board valoriza.</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Copie isso</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Frameworks de governança (NIST AI RMF)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Estrutura de Comitê de IA (CEO + CFO + CHRO + CISO)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Definição de KPI de adoção e ROI por modelo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Sistema de tagging de risco por aplicação</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Programa "1 GPT por funcionário" (modelo Moderna)</span></li>
+</ul></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Não copie isso</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ritmo de demissão (Klarna -700 em 6 meses) — não funciona em CLT</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Retórica de "AI agency em 90 dias" — soa Made-in-YouTube</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Número absoluto de ROI em USD — converta para realidade local</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tom evangelista de palco TED — público BR cético</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Suposição de regulação leve — LGPD é mais cautelosa</span></li>
+</ul></div></div>
+
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Tropicalize com integridade</h3>
+<p class="text-neutral-300">Adapte o framework, não as conclusões. "Estamos seguindo NIST AI RMF" é defensável. "Vamos copiar JPMorgan" é palpite. A primeira ganha respeito do board; a segunda vira piada.</p>
+</div>
+</section>
+
+<!-- BOX PROMPT -->
+<section class="mb-16">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">🧪</span> Prompt — checklist LGPD para projeto de IA</h3>
+<p class="text-neutral-300 text-sm mb-4">Use este prompt antes de propor qualquer projeto de IA na empresa. Saída serve para conversa com DPO.</p>
+<div class="bg-dark-900 rounded-lg p-4 mb-3 text-xs text-neutral-300 font-mono whitespace-pre-wrap">🇧🇷 Você é um especialista em LGPD com foco em IA generativa. Vou descrever um projeto que pretendo propor. Sua tarefa:
+
+1. Identifique se há tratamento de dado pessoal (com base no art. 5º LGPD).
+2. Sugira a base legal mais defensável (art. 7º) e por quê.
+3. Indique se há decisão automatizada que dispara art. 20 (revisão humana).
+4. Liste 5 riscos LGPD específicos do projeto, ordenados por probabilidade × impacto.
+5. Proponha 3 controles que reduziriam o risco a "aceitável" — em linguagem que um DPO aceitaria.
+6. Sugira um template de 1 página para apresentar ao DPO antes do kick-off.
+
+Projeto: [descrição, dados envolvidos, decisão tomada pelo modelo, stakeholder afetado]</div>
+<div class="bg-dark-900 rounded-lg p-4 text-xs text-neutral-300 font-mono whitespace-pre-wrap">🇺🇸 You are a data-protection specialist focused on generative AI (Brazilian LGPD + EU GDPR comparison). I'll describe a project I'm planning. Your task:
+
+1. Identify any personal-data processing involved.
+2. Suggest the most defensible legal basis and why.
+3. Flag any automated-decision step that triggers a right-to-human-review.
+4. List 5 privacy risks ordered by probability × impact.
+5. Propose 3 controls that reduce risk to "acceptable" in DPO-friendly language.
+6. Suggest a 1-page template to brief the DPO before kickoff.
+
+Project: [description, data involved, decisions made by the model, affected stakeholder]</div>
+</div></section>
+
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>LGPD já regula IA</strong><span class="text-neutral-400"> — art. 20 (decisão), art. 7º (base legal), art. 5º XV (cross-border).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Refaça ROI com salário BR</strong><span class="text-neutral-400"> — encargos + turnover + erro mudam a equação.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Cultura pune erro</strong><span class="text-neutral-400"> — sponsor C-level + escopo pequeno + plano B = sobrevivência política.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Ecossistema BR-friendly</strong><span class="text-neutral-400"> — região local + multimodel + ANPD-aware.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>4 setores de alta densidade</strong><span class="text-neutral-400"> — financeiro, saúde, varejo, jurídico.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Importação seletiva dos EUA</strong><span class="text-neutral-400"> — copie framework, adapte número e tom.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3><p class="text-neutral-300">1.5 — 4 mitos que sabotam quem entra agora</p></div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo anterior</a>
+<a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo Módulo →</a>
+</div></div></section>
+
+</main>
+
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>CAIO 2030 — Chief AI Officer · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+</div></footer>
+
+<script>
+const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;
+if(localStorage.getItem('theme')==='light'){h.classList.remove('dark');d.classList.remove('hidden')}else{l.classList.remove('hidden')}
+t.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light')});
+</script>
+</body></html>
